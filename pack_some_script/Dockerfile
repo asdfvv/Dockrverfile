@@ -38,13 +38,13 @@ RUN git clone https://github.com/Zero-S1/xmly_speed.git /xmly_speed \
         && pip3 install -r requirements.txt
 
 # 支持多账号企鹅阅读的仓库
-RUN git clone https://github.com/ziye12/JavaScript.git /qqread \
+RUN git clone https://github.com/ziye66666/JavaScript.git /qqread \
         && cd /qqread \
         && git checkout master \
         && npm install
 
 # 支持多账号汽车之家的仓库
-RUN git clone https://github.com/ziye12/QCZJSPEED.git /QCZJSPEED
+RUN git clone https://github.com/ziye66666/QCZJSPEED.git /QCZJSPEED
 
 
 # github action 构建
