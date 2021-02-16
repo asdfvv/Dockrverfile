@@ -43,8 +43,6 @@ RUN git clone https://github.com/ziye66666/JavaScript.git /qqread \
         && git checkout main \
         && npm install
 
-# 支持多账号汽车之家的仓库
-RUN git clone https://github.com/ziye66666/QCZJSPEED.git /QCZJSPEED
 
 
 # github action 构建
