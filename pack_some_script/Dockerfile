@@ -40,7 +40,7 @@ RUN git clone https://github.com/Zero-S1/xmly_speed.git /xmly_speed \
 # 支持多账号企鹅阅读的仓库
 RUN git clone https://github.com/ziye66666/JavaScript.git /qqread \
         && cd /qqread \
-        && git checkout master \
+        && git checkout main \
         && npm install
 
 # 支持多账号汽车之家的仓库
