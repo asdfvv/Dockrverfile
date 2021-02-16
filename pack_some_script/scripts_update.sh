@@ -168,40 +168,7 @@ else
     # echo "$QQREAD_OPENBOX_CRON node /qqread/Task/qqreads_openbox.js >> /logs/qqreads_openbox.log 2>&1" >>$defaultListFile
 fi
 
-##判断汽车之家COOKIE配置之后才会更新相关任务脚本
-if [ 0"$QCZJ_GetUserInfoHEADER" = "0" ]; then
-    echo "没有汽车之家Cookie，相关环境变量参数，跳过配置定时任务"
-else
-    echo "Pull the qczj latest code..."
-    echo "git 拉取汽车之家极速版最新代码..."
-    git -C /QCZJSPEED reset --hard
-    git -C /QCZJSPEED pull
-    npm install --prefix /QCZJSPEED
 
-    echo "Replace some qczj scripts content to be compatible with env configuration ..."
-    echo "替换汽车之间内容修正错误..."
-    sed -i "s/=\ GetUserInfourlArr\[i\]/=\ GetUserInfourlArr\[i\].trim()/g" /QCZJSPEED/Task/qczjspeed.js
-    sed -i "s/=\ GetUserInfoheaderArr\[i\]/=\ GetUserInfoheaderArr\[i\].trim()/g" /QCZJSPEED/Task/qczjspeed.js
-    sed -i "s/=\ coinbodyArr\[i\]/=\ coinbodyArr\[i\].trim()/g" /QCZJSPEED/Task/qczjspeed.js
-    sed -i "s/=\ taskbodyArr\[i\]/=\ taskbodyArr\[i\].trim()/g" /QCZJSPEED/Task/qczjspeed.js
-    sed -i "s/=\ activitybodyArr\[i\]/=\ activitybodyArr\[i\].trim()/g" /QCZJSPEED/Task/qczjspeed.js
-    sed -i "s/=\ GoldcoinbodyArr\[i\]/=\ GoldcoinbodyArr\[i\].trim()/g" /QCZJSPEED/Task/qczjspeed.js
-    sed -i "s/=\ videobodyArr\[i\]/=\ videobodyArr\[i\].trim()/g" /QCZJSPEED/Task/qczjspeed.js
-    sed -i "s/=\ WelfarevideobodyArr\[i\]/=\ WelfarevideobodyArr\[i\].trim()/g" /QCZJSPEED/Task/qczjspeed.js
-    sed -i "s/=\ WelfarebodyArr\[i\]/=\ WelfarebodyArr\[i\].trim()/g" /QCZJSPEED/Task/qczjspeed.js
-    sed -i "s/=\ addCoinbodyArr\[i\]/=\ addCoinbodyArr\[i\].trim()/g" /QCZJSPEED/Task/qczjspeed.js
-    sed -i "s/=\ addCoin2bodyArr\[i\]/=\ addCoin2bodyArr\[i\].trim()/g" /QCZJSPEED/Task/qczjspeed.js
-    sed -i "s/=\ reportAssheaderArr\[i\]/=\ reportAssheaderArr\[i\].trim()/g" /QCZJSPEED/Task/qczjspeed.js
-    sed -i "s/=\ reportAssbodyArr\[i\]/=\ reportAssbodyArr\[i\].trim()/g" /QCZJSPEED/Task/qczjspeed.js
-    sed -i "s/cointowalletbodyVal.replace/cointowalletbodyVal.trim().replace/g" /QCZJSPEED/Task/qczjspeed.js
-
-    if [ 0"$QCZJ_CRON" = "0" ]; then
-        QCZJ_CRON="*/30 * * * *"
-    fi
-    echo -e >>$defaultListFile
-    ##汽车之家相关任务
-    echo "$QCZJ_CRON sleep \$((RANDOM % 120)); node /QCZJSPEED/Task/qczjspeed.js >> /logs/qczjspeed.log 2>&1" >>$defaultListFile
-fi
 
 ##判断百度极速版COOKIE配置之后才会更新相关任务脚本
 if [ 0"$BAIDU_COOKIE" = "0" ]; then
