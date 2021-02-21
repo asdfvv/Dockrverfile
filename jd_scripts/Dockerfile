@@ -12,12 +12,12 @@ RUN set -ex \
         && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
         && echo "Asia/Shanghai" > /etc/timezone \
         
-       
 RUN  git clone ${REPO_URL} /scripts \
         && cd /scripts \
         && git checkout main \
         && mkdir logs \
         && npm install
+
 RUN mkdir /jds \
         && cd  /jds \
         && git init \
