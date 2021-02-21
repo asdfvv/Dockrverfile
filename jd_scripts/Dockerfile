@@ -11,7 +11,7 @@ RUN set -ex \
         && apk add --no-cache tzdata  git  nodejs  moreutils  npm  python3-dev  py3-pip  py3-cryptography curl jq \
         && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
         && echo "Asia/Shanghai" > /etc/timezone \
-        && echo "180.97.125.228 gitee.com" >> /etc/hosts 
+
 
 RUN git clone ${REPO_URL} /scripts \
         && cd /scripts \
