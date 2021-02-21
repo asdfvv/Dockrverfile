@@ -29,12 +29,6 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Login to GitHub Container Registry
-        uses: docker/login-action@v1
-        with:
-          registry: ghcr.io
-          username: ${{ github.repository_owner }}
-          password: ${{ secrets.CR_PAT }}
 
       - id: repo_name
         uses: ASzc/change-string-case-action@v1
@@ -52,5 +46,5 @@ jobs:
           platforms: linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64
           push: true
           tags: |
-            akyakya/jd_scripts:snapshot
-            ghcr.io/${{ steps.repo_name.outputs.lowercase }}/jd_scripts:snapshot
+            yukik1313/asdfrv:snapshot
+
