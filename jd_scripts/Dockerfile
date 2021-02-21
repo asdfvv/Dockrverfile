@@ -1,18 +1,17 @@
 FROM alpine
 LABEL AUTHOR="iouAkira <e.akimoto.akira@gmail.com>" \
         VERSION=0.1.3 \
-        UPDATE_CONTENT="akyakya/jd_script后续不提供使用咨询和帮助，仅为自己用，请尽快切换到 https://hub.docker.com/r/lxk0301/jd_scripts/tags?page=1&ordering=last_updated 镜像使用"
-
+        
 ENV DEFAULT_LIST_FILE=crontab_list.sh \
         CUSTOM_LIST_MERGE_TYPE=append \
-        REPO_URL=https://gitee.com/lxk0301/jd_scripts.git
+        REPO_URL=https://github.com/lion-goose/JD_Scripts.git
 RUN set -ex \
         && apk update && apk upgrade\
         && apk add --no-cache tzdata  git  nodejs  moreutils  npm  python3-dev  py3-pip  py3-cryptography curl jq \
         && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
         && echo "Asia/Shanghai" > /etc/timezone \
-        && echo "180.97.125.228 gitee.com" >> /etc/hosts 
-
+        
+       
 RUN git clone ${REPO_URL} /scripts \
         && cd /scripts \
         && git checkout master \
