@@ -5,16 +5,17 @@ LABEL AUTHOR="iouAkira <e.akimoto.akira@gmail.com>" \
 
 ENV DEFAULT_LIST_FILE=crontab_list.sh \
         CUSTOM_LIST_MERGE_TYPE=append \
-        REPO_URL=https://github.com/danwangshimoluo/JdScripts.git
+        REPO_URL=https://gitee.com/lxk0301/jd_scripts.git
 RUN set -ex \
         && apk update && apk upgrade\
         && apk add --no-cache tzdata  git  nodejs  moreutils  npm  python3-dev  py3-pip  py3-cryptography curl jq \
         && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
         && echo "Asia/Shanghai" > /etc/timezone \
-        
-RUN  git clone ${REPO_URL} /scripts \
+        && echo "180.97.125.228 gitee.com" >> /etc/hosts 
+
+RUN git clone ${REPO_URL} /scripts \
         && cd /scripts \
-        && git checkout main \
+        && git checkout master \
         && mkdir logs \
         && npm install
 
