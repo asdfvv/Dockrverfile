@@ -11,14 +11,13 @@ RUN set -ex \
         && apk add --no-cache tzdata  git  nodejs  moreutils  npm  python3-dev  py3-pip  py3-cryptography curl jq \
         && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
         && echo "Asia/Shanghai" > /etc/timezone \
-
-
-RUN git clone ${REPO_URL} /scripts \
+        
+       
+RUN  git clone ${REPO_URL} /scripts \
         && cd /scripts \
         && git checkout main \
         && mkdir logs \
         && npm install
-
 RUN mkdir /jds \
         && cd  /jds \
         && git init \
