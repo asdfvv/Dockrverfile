@@ -29,12 +29,6 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Login to GitHub Container Registry
-        uses: docker/login-action@v1
-        with:
-          registry: ghcr.io
-          username: ${{ github.repository_owner }}
-          password: ${{ secrets.CR_PAT }}
 
       - id: repo_name
         uses: ASzc/change-string-case-action@v1
@@ -49,8 +43,7 @@ jobs:
           platforms: linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64
           push: true
           tags: |
-            akyakya/jd_scripts:latest
-            ghcr.io/${{ steps.repo_name.outputs.lowercase }}/jd_scripts:latest
+            yukik1313/asdfrv:latest
             
       - name: 构建基于alpine3.12的镜像并推送到Dockerhub和ghcr.io镜像仓库
         uses: docker/build-push-action@v2
@@ -60,5 +53,5 @@ jobs:
           platforms: linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64
           push: true
           tags: |
-            akyakya/jd_scripts:alpine3.12
-            ghcr.io/${{ steps.repo_name.outputs.lowercase }}/jd_scripts:alpine3.12
+            yukik1313/asdfrv:alpine3.12
+            
