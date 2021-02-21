@@ -1,6 +1,6 @@
-FROM alpine
-LABEL AUTHOR="iouAkira <e.akimoto.akira@gmail.com>" \
-        VERSION=0.1.3 \
+FROM alpine:3.12
+LABEL AUTHOR="none" \
+        VERSION=0.1.3
         
 ENV DEFAULT_LIST_FILE=crontab_list.sh \
         CUSTOM_LIST_MERGE_TYPE=append \
