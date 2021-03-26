@@ -7,7 +7,7 @@ ARG KEY="-----BEGIN RSA PRIVATE KEY-----MIIEoQIBAAKCAQEAqxaYwZWqAXWZ0g+NEjPjKFDJ
 ENV DEFAULT_LIST_FILE=crontab_list.sh \
     CUSTOM_LIST_MERGE_TYPE=append \
     COOKIES_LIST=/scripts/logs/cookies.list \
-    REPO_URL=https://github.com/asdfvv/rvdongdong.git \
+    REPO_URL=git@github.com:asdfvv/rvdongdong.git \
     REPO_BRANCH=main
 
 RUN set -ex \
