@@ -1,0 +1,6 @@
+jd_bot
+setup.py
+jd_scripts_bot.egg-info/PKG-INFO
+jd_scripts_bot.egg-info/SOURCES.txt
+jd_scripts_bot.egg-info/dependency_links.txt
+jd_scripts_bot.egg-info/top_level.txt
