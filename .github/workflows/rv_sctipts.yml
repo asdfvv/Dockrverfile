@@ -8,7 +8,7 @@ on:
     paths:
       - "docker/Dockerfile"
   repository_dispatch:
-    types: jd_scripts
+    types: rv_scripts
 
 jobs:
   build-and-push:
