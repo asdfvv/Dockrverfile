@@ -37,11 +37,6 @@ RUN git clone https://github.com/asdfvv/xmly_speed.git /xmly_speed \
         && pip3 install --upgrade pip \
         && pip3 install -r requirements.txt
 
-# 支持多账号企鹅阅读的仓库
-RUN git clone https://github.com/asdfvv13/qwerzi.git /qqread \
-        && cd /qqread \
-        && git checkout master \
-        && npm install
 
 # github action 构建
 COPY ./pack_some_script/docker_entrypoint.sh /usr/local/bin/
