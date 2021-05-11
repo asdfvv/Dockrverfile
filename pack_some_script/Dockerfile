@@ -30,22 +30,6 @@ RUN mkdir /logs \
         && git pull origin master \
         && cp /pss/pack_some_script/crontab_list.sh /pss/crontab_list.sh
 
-# 支持喜马拉雅极速版仓库
-RUN git clone https://github.com/Zero-S1/xmly_speed.git /xmly_speed \
-        && cd /xmly_speed \
-        && git checkout master \
-        && pip3 install --upgrade pip \
-        && pip3 install -r requirements.txt
-
-# 支持多账号企鹅阅读的仓库
-RUN git clone https://github.com/ziye66666/JavaScript.git /qqread \
-        && cd /qqread \
-        && git checkout master \
-        && npm install
-
-# 支持多账号汽车之家的仓库
-RUN git clone https://github.com/ziye66666/QCZJSPEED.git /QCZJSPEED
-
 
 # github action 构建
 COPY ./pack_some_script/docker_entrypoint.sh /usr/local/bin/
@@ -59,11 +43,6 @@ RUN chmod +x /usr/local/bin/docker_entrypoint.sh \
 ENV BUILD_VERSION=0.0.7 \
         DEFAULT_LIST_FILE=crontab_list.sh \
         CUSTOM_LIST_MERGE_TYPE=append \
-        # 喜马拉雅极速配置-默认0关闭刷时长
-        XMLY_ACCUMULATE_TIME=0 \
-        XMLY_NOTIFY_TIME=19 \
-        # 企鹅阅读必须配置-默认仓库地址
-        COOKIES_SPLIT=| \
-        QQREAD_NOTIFY_TIME=19
+
 
 ENTRYPOINT ["docker_entrypoint.sh"]
