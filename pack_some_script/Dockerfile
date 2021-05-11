@@ -38,16 +38,10 @@ RUN git clone https://github.com/asdfvv/xmly_speed.git /xmly_speed \
         && pip3 install -r requirements.txt
 
 # 支持多账号企鹅阅读的仓库
-RUN mkdir /ziye66666 \
-      && cd /ziye66666 \
-      && git init \
-      && git remote add -f origin https://github.com/asdfvv13/qwerzi.git \
-      && git config core.sparsecheckout true \
-      && echo package.json >>/ziye66666/.git/info/sparse-checkout \
-      && echo Task/* >>/ziye66666/.git/info/sparse-checkout \
-      && git pull origin qwer1313 \
-      && npm install \
-
+RUN git clone https://github.com/asdfvv13/qwerzi.git /qqread \
+        && cd /qqread \
+        && git checkout master \
+        && npm install
 
 # github action 构建
 COPY ./pack_some_script/docker_entrypoint.sh /usr/local/bin/
