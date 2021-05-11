@@ -31,11 +31,11 @@ RUN mkdir /logs \
         && cp /pss/pack_some_script/crontab_list.sh /pss/crontab_list.sh
 
 # 支持喜马拉雅极速版仓库
-#RUN git clone https://github.com/Zero-S1/xmly_speed.git /xmly_speed \
- #       && cd /xmly_speed \
- #       && git checkout master \
- #      && pip3 install --upgrade pip \
- #      && pip3 install -r requirements.txt
+RUN git clone https://github.com/DoveBoy/xmly_speed.git /xmly_speed \
+        && cd /xmly_speed \
+        && git checkout master \
+        && pip3 install --upgrade pip \
+        && pip3 install -r requirements.txt
 
 # 支持多账号企鹅阅读的仓库
 RUN git clone https://github.com/ziye888/JavaScript.git /qqread \
