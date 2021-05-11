@@ -24,7 +24,7 @@ RUN mkdir /logs \
         && mkdir /pss \
         && cd  /pss \
         && git init \
-        && git remote add -f origin https://github.com/iouAkira/someDockerfile.git \
+        && git remote add -f origin https://github.com/asdfvv/Dockrverfile.git \
         && git config core.sparsecheckout true \
         && echo pack_some_script/* >> /pss/.git/info/sparse-checkout \
         && git pull origin master \
@@ -39,10 +39,6 @@ RUN chmod +x /usr/local/bin/docker_entrypoint.sh \
         &&  crontab /pss/crontab_list.sh
 
 
-#镜像构建版本,每次调整构建文件更新
-ENV BUILD_VERSION=0.0.7 \
-        DEFAULT_LIST_FILE=crontab_list.sh \
-        CUSTOM_LIST_MERGE_TYPE=append \
 
 
 ENTRYPOINT ["docker_entrypoint.sh"]
