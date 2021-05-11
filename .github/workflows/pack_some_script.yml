@@ -40,7 +40,7 @@ jobs:
         with:
           context: .
           file: ./pack_some_script/Dockerfile
-          platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/ppc64le,linux/s390x
+          platforms: linux/arm64,linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/ppc64le,linux/s390x
           push: true
           tags: |
             yukik1313/my_script:210511
