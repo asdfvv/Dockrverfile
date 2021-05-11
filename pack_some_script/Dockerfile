@@ -38,10 +38,10 @@ RUN mkdir /logs \
  #      && pip3 install -r requirements.txt
 
 # 支持多账号企鹅阅读的仓库
-#RUN git clone https://github.com/ziye66666/JavaScript.git /qqread \
- #       && cd /qqread \
-  #      && git checkout main \
-   #     && npm install
+RUN git clone https://github.com/ziye888/JavaScript.git /qqread \
+        && cd /qqread \
+        && git checkout main \
+        && npm install
 
 
 
