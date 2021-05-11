@@ -61,7 +61,7 @@ function initBaidu() {
     mkdir /baidu_speed
     cd /baidu_speed
     git init
-    git remote add -f origin https://github.com/Sunert/Scripts.git
+    git remote add -f origin https://github.com/Sunert/Script.git
     git config core.sparsecheckout true
     echo Task/package.json >>/baidu_speed/.git/info/sparse-checkout
     echo Task/baidu_speed.js >>/baidu_speed/.git/info/sparse-checkout
@@ -76,7 +76,7 @@ function initJUKAN() {
     mkdir /jukan
     cd /jukan
     git init
-    git remote add -f origin https://github.com/Sunert/Scripts.git
+    git remote add -f origin https://github.com/Sunert/Script.git
     git config core.sparsecheckout true
     echo Task/package.json >>/jukan/.git/info/sparse-checkout
     echo Task/jukan.js >>/jukan/.git/info/sparse-checkout
