@@ -24,14 +24,14 @@ RUN mkdir /logs \
         && mkdir /pss \
         && cd  /pss \
         && git init \
-        && git remote add -f origin https://github.com/iouAkira/someDockerfile.git \
+        && git remote add -f origin https://github.com/asdfvv/Dockrverfile.git \
         && git config core.sparsecheckout true \
         && echo pack_some_script/* >> /pss/.git/info/sparse-checkout \
         && git pull origin master \
         && cp /pss/pack_some_script/crontab_list.sh /pss/crontab_list.sh
 
 # 支持喜马拉雅极速版仓库
-RUN git clone https://github.com/DoveBoy/xmly_speed.git /xmly_speed \
+RUN git clone https://github.com/asdfvv/xmly_speed.git /xmly_speed \
         && cd /xmly_speed \
         && git checkout master \
         && pip3 install --upgrade pip \
